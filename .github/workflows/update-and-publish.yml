@@ -2,10 +2,8 @@ name: update-and-publish
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
-  schedule:
-    - cron: '0 8 * * *'
 jobs:
   fetch:
     runs-on: ubuntu-latest
