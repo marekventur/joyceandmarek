@@ -1,4 +1,4 @@
-export default function () {
+function Ceremony () {
   return (
       <div className="card">
         <h1>Joyce and Marek</h1>
@@ -6,3 +6,5 @@ export default function () {
       </div>
   );
 }
+
+export default Ceremony;
