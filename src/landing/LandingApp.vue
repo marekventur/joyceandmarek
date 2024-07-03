@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Joyce and Marek Landing</h1>
+    <div class="signatures" />
   </header>
 </template>
 
@@ -9,12 +9,16 @@ header {
   width: 100%;
   line-height: 1.5;
   text-align: center;
-  max-height: 100vh;
+  height: 100vh;
   display: block;
 }
 
-header h1 {
-  width: 100%;
-  display: block;
+.signatures {
+  background: url('../assets/signature.svg') no-repeat center;
+  background-size: contain;
+  width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+  
 }
 </style>
