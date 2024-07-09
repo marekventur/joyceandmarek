@@ -1,14 +1,13 @@
 <script setup lang="ts">
+  import Header from "../sections/Header.vue";
+  import Hero from "../sections/Hero.vue";
+  import Rsvp from "../sections/Rsvp.vue";
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <h1>Wedding</h1>
-    </div>
-  </header>
-
-  <RouterView />
+  <Header />
+  <Hero />
+  <Rsvp />
 </template>
 
 <style scoped>
