@@ -19,7 +19,6 @@ import Header from "../sections/Header.vue";
     background: url('../assets/hero.jpg') no-repeat center;
     background-size: contain;
     aspect-ratio: 1.5;
-    background-color: red;
 }
 </style>
   
