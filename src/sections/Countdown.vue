@@ -1,3 +1,37 @@
+
+<script setup lang="ts">
+  import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+  const targetDate = ref(new Date('2024-09-06T13:00:00'))
+  const days = ref(0)
+  const hours = ref(0)
+  const minutes = ref(0)
+  const seconds = ref(0)
+  let timer: number | undefined = undefined
+
+  const startCountdown = () => {
+    const fn = () => {
+      const now = new Date().getTime()
+      const distance = targetDate.value.getTime() - now
+
+      days.value = Math.floor(distance / (1000 * 60 * 60 * 24))
+      hours.value = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      minutes.value = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      seconds.value = Math.floor((distance % (1000 * 60)) / 1000)
+    };
+    setInterval(fn, 1000);
+    fn();
+  }
+
+  onMounted(() => {
+    startCountdown()
+  })
+
+  onBeforeUnmount(() => {
+    clearInterval(timer)
+  })
+</script>
+
 <template>
     <div class="countdown-container">
         <div class="countdown"><div class="number number--days">{{ days }}</div> Days</div>
@@ -6,45 +40,6 @@
         <div class="countdown"><div class="number number--days">{{ seconds }}</div> Seconds</div>
     </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-        targetDate: new Date('2024-09-06T13:00:00'),
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-        timer: null
-    };
-  },
-  mounted() {
-    this.startCountdown();
-  },
-  methods: {
-    startCountdown() {
-      this.timer = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = this.targetDate.getTime() - now;
-
-        if (distance < 0) {
-          clearInterval(this.timer);
-          this.days = this.hours = this.minutes = this.seconds = 0;
-        } else {
-          this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        }
-      }, 1000);
-    }
-  },
-  beforeUnmount() {
-    clearInterval(this.timer);
-  }
-}
-</script>
 
 <style>
 .countdown-container {
