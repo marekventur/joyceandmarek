@@ -21,7 +21,7 @@ import Header from "../sections/Header.vue";
 .getting-married {
     background: url('../assets/getting_married.png') no-repeat center;
     background-size: contain;
-    max-width: 50rem;
+    max-width: 35rem;
     width: 50rem;
     aspect-ratio: 2.38;
     margin: 8rem auto 4rem auto;
@@ -29,24 +29,24 @@ import Header from "../sections/Header.vue";
 .signature {
     background: url('../assets/signature_wide.svg') no-repeat center;
     background-size: contain;
-    max-width: 50rem;
+    max-width: 35rem;
     width: 50rem;
     aspect-ratio: 5;
     margin: 0 auto 3rem auto;
 }
 .text {
-    margin-top: 3rem;
-    max-width: 50rem;
+    margin-top: 0rem;
+    max-width: 35rem;
 }
 .text--strong {
     margin-top: 2rem;
-    font-size: 4rem;
-    max-width: 50rem;
+    font-size: 3rem;
+    max-width: 35rem;
 
 }
 .countdown {
-    margin-top: 10rem;
-    margin-bottom: 8rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 .inner {
     display: flex;

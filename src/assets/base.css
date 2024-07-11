@@ -60,9 +60,12 @@ body {
   font-family: "Crimson Pro", serif;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 2rem;
   font-style: normal;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+strong {
+  font-weight: bold;
 }

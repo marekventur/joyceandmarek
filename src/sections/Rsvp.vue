@@ -16,11 +16,11 @@ import Header from "../sections/Header.vue";
 
 <style scoped>
 .box {
-    width: 56rem;
+    width: 50rem;
     aspect-ratio: 1.8;
     background: url('../assets/rsvp_box.png') no-repeat center;
     background-size: contain;
-    margin: 4rem auto;
+    margin: 6rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,11 +28,11 @@ import Header from "../sections/Header.vue";
 
 a, a:hover, a:active, a:visited {
     box-sizing: border-box;
-  margin-top: 18rem;
+  margin-top: 15.5rem;
   padding-right: 1rem;
   text-decoration: none;
   display: block;
-  width: 43rem;
+  width: 35rem;
   aspect-ratio: 5.24;
   background: url('../assets/rsvp_button.png') no-repeat center;
   background-size: contain;

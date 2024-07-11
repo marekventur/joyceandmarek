@@ -57,15 +57,15 @@ export default {
 }
 
 .countdown {
-    min-width: 12rem;
-    margin: 0 2rem;
+    min-width: 6rem;
+    margin: 0 1rem;
     display: block;
     text-align: center;
     flex-basis: 1;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .countdown .number {
-    font-size: 4rem;
+    font-size: 3rem;
     display: block;
 }
 </style>
