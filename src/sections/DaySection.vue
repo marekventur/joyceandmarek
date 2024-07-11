@@ -13,7 +13,7 @@ import Header from "../sections/Header.vue";
     <div class="section">
        <div class="left">
             <div class="left-circle">
-                <div class="left-inner" :style="{ backgroundImage: 'url(/src/assets/'+img+')' }" />
+                <div class="left-inner" :style="{ backgroundImage: 'url('+img+')' }" />
              </div>
        </div>
        <div class="right">

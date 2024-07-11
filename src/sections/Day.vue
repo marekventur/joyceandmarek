@@ -15,7 +15,7 @@
 <template>
     <section class="day" :style="{ backgroundColor: bgColor }">
         <div class="inner">
-            <div class="header" :style="{ backgroundImage: 'url(/src/assets/'+headerImg+')' }" />
+            <div class="header" :style="{ backgroundImage: 'url('+headerImg+')' }" />
             <slot />
         </div>
     </section>
