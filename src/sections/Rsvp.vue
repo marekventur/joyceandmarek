@@ -27,7 +27,7 @@
 
 a, a:hover, a:active, a:visited {
     box-sizing: border-box;
-    margin-top: 20%;
+    margin-top: 30%;
     padding-right: 1rem;
     text-decoration: none;
     display: block;
