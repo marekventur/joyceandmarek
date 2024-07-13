@@ -1,13 +1,19 @@
-import Header from "../sections/Header.vue";
 <script setup lang="ts">
-  import Countdown from "./Countdown.vue";
+    import { defineProps } from 'vue';
+
+    const props = defineProps({
+        onGift: {
+            type: Function,
+            required: true
+        }
+    });
 </script>
 
 <template>
     <section class="details">
         <div class="inner">
             <div class="header header--gifts" />
-            <p>We are grateful that you can join us on our special day. Your company is the only gift we need. However, if you wish to give, a contribution to our honeymoon would be greatly appreciated.</p>
+            <p>We are grateful that you can join us on our special day. Your company is the only gift we need. However, if you wish to give, <a href="#" @click.prevent="onGift()">a contribution to our honeymoon</a> would be greatly appreciated.</p>
             <div class="header header--dress-code" />
             <p><strong>COCKTAIL ATTIRE</strong></p>
             <p>We kindly request cocktail attire with a splash of colour. Your elegant and vibrant presence will make our celebration even more joyous.</p>

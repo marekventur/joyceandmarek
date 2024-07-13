@@ -1,4 +1,3 @@
-import Header from "../sections/Header.vue";
 <script setup lang="ts">
   import Countdown from "./Countdown.vue";
 </script>
@@ -16,7 +15,7 @@ import Header from "../sections/Header.vue";
 
 <style scoped>
 .box {
-    width: 50rem;
+    max-width: 50rem;
     aspect-ratio: 1.8;
     background: url('../assets/rsvp_box.png') no-repeat center;
     background-size: contain;
@@ -28,16 +27,16 @@ import Header from "../sections/Header.vue";
 
 a, a:hover, a:active, a:visited {
     box-sizing: border-box;
-  margin-top: 15.5rem;
-  padding-right: 1rem;
-  text-decoration: none;
-  display: block;
-  width: 35rem;
-  aspect-ratio: 5.24;
-  background: url('../assets/rsvp_button.png') no-repeat center;
-  background-size: contain;
-  line-height: 7.5rem;
-  text-align: center;
+    margin-top: 20%;
+    padding-right: 1rem;
+    text-decoration: none;
+    display: block;
+    width: 35rem;
+    aspect-ratio: 5.24;
+    background: url('../assets/rsvp_button.png') no-repeat center;
+    background-size: contain;
+    line-height: 7.5rem;
+    text-align: center;
 }
 
 a:hover {

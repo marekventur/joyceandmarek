@@ -1,4 +1,3 @@
-import Header from "../sections/Header.vue";
 <script setup lang="ts">
     import { defineProps } from 'vue'
 
