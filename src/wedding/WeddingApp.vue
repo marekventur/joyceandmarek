@@ -20,7 +20,7 @@
 
   import { ref } from 'vue';
 
-  const isRedPocketOpen = ref(true);
+  const isRedPocketOpen = ref(false);
 
   const setRedPocket = (state:boolean) => {
     isRedPocketOpen.value = state;
