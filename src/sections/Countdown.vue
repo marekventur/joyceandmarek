@@ -40,10 +40,10 @@
 
 <template>
     <div class="countdown countdown-container">
-        <div class="countdown"><div class="number number--days">{{ days }}</div> Days</div>
-        <div class="countdown"><div class="number number--days">{{ hours }}</div> Hours</div>
-        <div class="countdown"><div class="number number--days">{{ minutes }}</div> Minutes</div>
-        <div class="countdown"><div class="number number--days">{{ seconds }}</div> Seconds</div>
+        <div class="countdown-element"><div class="number number--days">{{ days }}</div> Days</div>
+        <div class="countdown-element"><div class="number number--days">{{ hours }}</div> Hours</div>
+        <div class="countdown-element"><div class="number number--days">{{ minutes }}</div> Minutes</div>
+        <div class="countdown-element"><div class="number number--days">{{ seconds }}</div> Seconds</div>
     </div>
 </template>
 
@@ -57,7 +57,7 @@
     margin: auto;
 }
 
-.countdown {
+.countdown-element {
     min-width: 6rem;
     margin: 0 1rem;
     display: block;
@@ -65,7 +65,7 @@
     flex-basis: 1;
     font-size: 2rem;
 }
-.countdown .number {
+.countdown-element .number {
     font-size: 3rem;
     display: block;
 }

@@ -7,6 +7,7 @@
   import DaySection from "../sections/DaySection.vue";
   import Details from "../sections/Details.vue";
   import RedPocket from "../sections/RedPocket.vue";
+  import Countdown from "../sections/Countdown.vue";
 
   import imgCake from '@/assets/cake.png'
   import imgPartyFood from '@/assets/party_food.png'
