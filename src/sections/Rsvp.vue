@@ -1,5 +1,11 @@
 <script setup lang="ts">
-  import Countdown from "./Countdown.vue";
+  import { defineProps } from 'vue'
+
+const props = defineProps({
+    href: {
+        type: String, required: true
+    },
+});
 </script>
 
 <template>
@@ -7,7 +13,7 @@
         <div class="inner">
             <div class="box">
                 <h1 class="sr-only">RSVP</h1>
-                <a href=".">Let us know if you can make it!</a>
+                <a :href="href" target="_blank">Let us know if you can make it!</a>
             </div>
         </div>
     </section>

@@ -31,9 +31,13 @@
 <template>
   <div :class="{ 'no-scroll': isRedPocketOpen }">
     <RedPocket :is-open="isRedPocketOpen" @close="setRedPocket(false)"/>
-    <Header />
+    <Header>
+      <p>are delighted to invite you to their wedding celebrations on</p>
+      <p class="emphasize">6 + 7 September</p>
+      <Countdown date="2024-09-06T13:00:00"/>
+    </Header>
     <Hero />
-    <Rsvp />
+    <Rsvp href="https://forms.gle/6vuXN2HctoesUpcMA"/>
     <Day bg-color="#FFEEC4" :header-img="imgDay1">
       <DaySection :img="imgClissoldHouse">
         <p><strong>1:30pm</strong> - Ceremony</p>
@@ -86,7 +90,7 @@
       </DaySection>
     </Day>
     <Details @gift="setRedPocket(true)" />
-    <Rsvp />
+    <Rsvp href="https://forms.gle/6vuXN2HctoesUpcMA"/>
   </div>
 </template>
 

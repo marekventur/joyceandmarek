@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Countdown from "./Countdown.vue";
+  
 </script>
 
 <template>
@@ -7,16 +7,15 @@
         <div class="inner">
             <div class="getting-married" />
             <div class="signature" />
-            <div class="text">are delighted to invite you to their wedding celebrations on</div>
-            <div class="text text--strong">6 + 7 September</div>
-            <div class="countdown">
-                <Countdown />
-            </div>
+            <slot />
         </div>
     </section>
 </template>
 
 <style scoped>
+.header {
+    text-align: center;
+}
 .getting-married {
     background: url('../assets/getting_married.png') no-repeat center;
     background-size: contain;
@@ -33,24 +32,30 @@
     aspect-ratio: 5;
     margin: 0 auto 3rem auto;
 }
-.text {
+
+.header .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+</style>
+
+<style>
+.header p {
+    margin: auto;
     margin-top: 0rem;
     max-width: 35rem;
 }
-.text--strong {
-    margin-top: 2rem;
+.header p.emphasize {
+    margin: 2rem auto;
     font-size: 3rem;
     max-width: 35rem;
 
 }
-.countdown {
+.header .countdown {
     margin-top: 5rem;
     margin-bottom: 5rem;
-}
-.inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 </style>
   

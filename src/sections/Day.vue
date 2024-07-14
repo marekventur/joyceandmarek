@@ -15,13 +15,17 @@
 <template>
     <section class="day" :style="{ backgroundColor: bgColor }">
         <div class="inner">
-            <div class="header" :style="{ backgroundImage: 'url('+headerImg+')' }" />
+            <div class="header" v-if="headerImg !== undefined" :style="{ backgroundImage: 'url('+headerImg+')' }" />
+            <div class="spacer" v-if="headerImg === undefined" />
             <slot />
         </div>
     </section>
 </template>
 
 <style scoped>
+.spacer {
+    height: 8rem;
+}
 
 .inner {
     display: flex;

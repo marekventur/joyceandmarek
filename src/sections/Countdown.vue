@@ -1,8 +1,14 @@
 
 <script setup lang="ts">
-  import { ref, onMounted, onBeforeUnmount } from 'vue'
+  import { ref, onMounted, onBeforeUnmount, defineProps } from 'vue'
 
-  const targetDate = ref(new Date('2024-09-06T13:00:00'))
+  const props = defineProps({
+    date: {
+      type: String, required: true
+    },
+  });
+
+  const targetDate = ref(new Date(props.date))
   const days = ref(0)
   const hours = ref(0)
   const minutes = ref(0)
@@ -33,7 +39,7 @@
 </script>
 
 <template>
-    <div class="countdown-container">
+    <div class="countdown countdown-container">
         <div class="countdown"><div class="number number--days">{{ days }}</div> Days</div>
         <div class="countdown"><div class="number number--days">{{ hours }}</div> Hours</div>
         <div class="countdown"><div class="number number--days">{{ minutes }}</div> Minutes</div>
