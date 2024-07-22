@@ -27,7 +27,7 @@
     <section class="sticky-header" :class="{'sticky-header--is-visible': isVisible}">
         <div class="inner">
             <div class="signature" />
-            <a :href="href" target="_blank">RSVP now!</a>
+            <a :href="href" target="_blank">RSVP</a>
         </div>
     </section>
 </template>
@@ -65,7 +65,7 @@ a {
     display: block;
     background: black;
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     display: inline-block;
     padding: 1rem 4rem;
     border: 1px solid black;
