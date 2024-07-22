@@ -21,9 +21,8 @@
   import imgPub from '@/assets/pub.png'
   import imgFood from '@/assets/food.png'
   import imgDrinks from '@/assets/drinks.png'
-  import imgDay1 from '@/assets/day1.png'
-  import imgDay2 from '@/assets/day2.png'
   import imgClissoldHouse from '@/assets/clissold_house.png'
+  import imgDay2 from '@/assets/day2.svg'
   
 
   import { ref } from 'vue';
@@ -61,7 +60,7 @@
         </DaySection>
       </DayGroup>
     </Day>
-    <Day headerImg="/src/assets/day2.svg">
+    <Day :headerImg="imgDay2">
       <DayGroup>
         <DaySection :img="imgPub" time="3:30 PM">
           Door opens<br />
