@@ -5,8 +5,8 @@
     <section class="gifts">
         <div class="header" />
         <div class="box">
-            <p>We are just so grateful that you can join us on our special day. Your company is the only gift we need.</p> 
-            <p>If you wish to give, a contribution to our honeymoon would be appreciated, send a message to one of us and we can share details.</p>
+            <p>We are just so grateful that you can join us on our special day. Your company is the only gift we need. </p>
+            <p>If you wish to give, a contribution to our honeymoon would be appreciated. You may use the following monzo link below.</p>
         </div>
         <a class="button" target="_blank" href="https://monzo.me/yanyeeli">Monzo.me link</a>
     </section>
