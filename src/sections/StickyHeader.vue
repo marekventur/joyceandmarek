@@ -2,10 +2,6 @@
     import { defineProps, ref, onMounted, onUnmounted } from 'vue';
 
     const props = defineProps({
-        visible: {
-            type: Boolean,
-            required: true
-        },
         href: {
             type: String,
             required: true,
