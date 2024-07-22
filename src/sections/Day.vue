@@ -12,7 +12,7 @@
 <template>
     <section class="day">
         <div class="inner">
-            <div class="header" />
+            <div class="header" :style="{'backgroundImage': headerImg ? ('url('+headerImg+')') : ''}" />
             <slot />
         </div>
     </section>

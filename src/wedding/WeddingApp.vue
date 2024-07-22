@@ -61,6 +61,24 @@
         </DaySection>
       </DayGroup>
     </Day>
+    <Day headerImg="/src/assets/day2.svg">
+      <DayGroup>
+        <DaySection :img="imgPub" time="3:30 PM">
+          Door opens<br />
+          Welcome drinks
+        </DaySection>
+        <DaySection :img="imgCake" time="5:00 PM">
+          Speeches<br />
+          Cake cutting
+        </DaySection>
+        <DaySection :img="imgPartyFood"  time="6:00 PM">
+          Party food + Drinks
+        </DaySection>
+        <DaySection :img="imgDance"  time="9:00 PM" time2="til midnight">
+          Dance the night away
+        </DaySection> 
+      </DayGroup>
+    </Day>
     <DuoResponsive reverse>
       <DressCode />
       <DressCodeImage />
