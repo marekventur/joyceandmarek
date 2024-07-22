@@ -6,7 +6,8 @@
         <div class="header" />
         <div class="box">
             <h2>Cocktail attire</h2>
-            <p>We kindly request cocktail attire with a splash of colour. Your elegant and vibrant presence will make our celebration even more joyous.</p>
+            <p>We would love to celebrate the day with a splash of colour. We would love to see you all in colours that bring you joy and share with us!</p>
+            <p>If you are looking for some colour inspirations, some corals/pinks/yellows or lilac and blues are all lovely choices for the day.</p>
         </div>
         <div class="palette" />
     </section>

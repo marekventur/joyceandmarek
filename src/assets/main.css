@@ -4,6 +4,7 @@
 #app {
   max-width: 100%;
   overflow-x: hidden;
+  line-height: 1.9rem
 }
 
 section {
