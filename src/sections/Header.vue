@@ -75,7 +75,7 @@
 }
 
 .date.date--7 {
-    background-image: url('../assets/date_handwritten_67.svg');
+    background-image: url('../assets/date_handwritten_7.svg');
 }
 </style>
 
