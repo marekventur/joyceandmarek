@@ -1,43 +1,81 @@
 <script setup lang="ts">
+
+    const props = defineProps({
+        type: {
+            type: String
+        }
+    });
   
 </script>
 
 <template>
     <section class="header">
         <div class="inner">
-            <div class="getting-married" />
             <div class="signature" />
-            <slot />
+            <div class="date" :class="'date--' + type" />
         </div>
     </section>
 </template>
 
 <style scoped>
 .header {
-    text-align: center;
-}
-.getting-married {
-    background: url('../assets/getting_married.png') no-repeat center;
-    background-size: contain;
-    max-width: 35rem;
-    width: 50rem;
-    aspect-ratio: 2.38;
-    margin: 8rem auto 4rem auto;
-}
-.signature {
-    background: url('../assets/signature_wide.svg') no-repeat center;
-    background-size: contain;
-    max-width: 35rem;
-    width: 50rem;
-    aspect-ratio: 5;
-    margin: 0 auto 3rem auto;
-}
-
-.header .inner {
+    width: 100vw;
+    height: 90vh;
+    background: url('../assets/hero1.jpg') center no-repeat;
+    background-size:cover;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10rem;
+}
+
+.inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100vw - 10rem);
+    max-width: calc(100vw - 10rem); 
+}
+
+
+
+.signature {
+    background: url('../assets/signature2.svg') left top no-repeat;
+    background-size: contain;
+    max-width: calc(100vw - 10rem);
+    width: 40rem;
+    height: 30rem;
+    background-repeat: no-repeat;
+}
+
+.date {
+    background: url('../assets/date_handwritten_67.svg') right top no-repeat;
+    background-size: contain;
+    max-width: calc(70vw - 10rem);
+    width: 30rem;
+    height: 10rem;
+    
+}
+
+@media (max-width: 999px) {
+  .inner {
+    flex-direction: column; 
+    height: calc(90vh - 10rem)
+  }
+
+  .signature {
+    align-self: center;
+  }
+
+  .date {
     margin-bottom: 2rem;
+    align-self: center;
+    height: 5rem;
+  }
+}
+
+.date.date--7 {
+    background-image: url('../assets/date_handwritten_67.svg');
 }
 </style>
 

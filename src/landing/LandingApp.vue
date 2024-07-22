@@ -1,13 +1,19 @@
 <script setup lang="ts">
   import Header from "../sections/Header.vue";
-  import Hero from "../sections/Hero.vue";
-  import Rsvp from "../sections/Rsvp.vue";
+  import Pullquote from "../sections/Pullquote.vue";
+  import DuoResponsive from "../sections/DuoResponsive.vue";
+  import Location from "../sections/Location.vue";
   import Day from "../sections/Day.vue";
-  import DayLocation from "../sections/DayLocation.vue";
+  import DayLocation from "@/sections/DayLocation.vue";
+  import DayGroup from "../sections/DayGroup.vue";
   import DaySection from "../sections/DaySection.vue";
-  import Details from "../sections/Details.vue";
-  import RedPocket from "../sections/RedPocket.vue";
-  import Countdown from "../sections/Countdown.vue";
+  import LocationSection from "../sections/LocationSection.vue";
+  import StickyHeader from "../sections/StickyHeader.vue";
+  import Gifts from "../sections/Gifts.vue";
+  import GiftsImage from "../sections/GiftsImage.vue";
+  import Footer from "../sections/Footer.vue";
+  import DressCode from "@/sections/DressCode.vue";
+  import DressCodeImage from "@/sections/DressCodeImage.vue";
 
   import imgCake from '@/assets/cake.png'
   import imgPartyFood from '@/assets/party_food.png'
@@ -18,64 +24,59 @@
   import imgDay1 from '@/assets/day1.png'
   import imgDay2 from '@/assets/day2.png'
   import imgClissoldHouse from '@/assets/clissold_house.png'
+  
 
   import { ref } from 'vue';
+  
 
-  const isRedPocketOpen = ref(false);
-
-  const setRedPocket = (state:boolean) => {
-    isRedPocketOpen.value = state;
-    document.body.style.overflow = state?'hidden':'auto';
-  };
+  
 </script>
 
 <template>
-  <div :class="{ 'no-scroll': isRedPocketOpen }">
-    <RedPocket :is-open="isRedPocketOpen" @close="setRedPocket(false)"/>
-    <Header>
-      <p>are delighted to invite you to their wedding party on the</p>
-      <p class="emphasize">7th September</p>
-      <p>at</p>
-      <p class="emphasize"><a href="https://maps.app.goo.gl/68mDd2FRxBikWNKv8">The Duke of Richmond</a>, Hackney</p>
-      <Countdown date="2024-09-07T15:30:00"/>
-    </Header>
-    <Hero />
-    <Rsvp href="https://forms.gle/JKuy77s5jZ1oFrT86" />
-    
-    <Day bg-color="#BDECE4">
-      <DaySection :img="imgPub">
-        <p><strong>3:30pm</strong></p>
-        <p> 
+  <div>
+    <Header type="7" />
+    <DuoResponsive>
+      <Pullquote />
+      <Location  type="pub" color="#C8E2FF">
+        <LocationSection title="The Duke of Richmond" address="316 Queensbridge Road, Hackney, London, E8 3NZ" link="https://maps.app.goo.gl/pqJo8ioyEe3suU9UA" />
+        <div class="box"><i>
+          Closest station: Dalston Junction on Overground, about 10 minutes walk.<br>
+          Nearby bus: No. 236
+        </i></div>
+      </Location>
+    </DuoResponsive>
+    <Day>
+      <DayGroup>
+        <DaySection :img="imgPub" time="3:30 PM">
           Door opens<br />
           Welcome drinks
-        </p>
-      </DaySection>
-      <DaySection :img="imgCake">
-        <p><strong>5:00pm</strong></p>
-        <p> 
+        </DaySection>
+        <DaySection :img="imgCake" time="5:00 PM">
           Speeches<br />
           Cake cutting
-        </p>
-      </DaySection>
-      <DaySection :img="imgPartyFood">
-        <p><strong>6:00pm</strong></p>
-        <p> 
+        </DaySection>
+        <DaySection :img="imgPartyFood"  time="6:00 PM">
           Party food + Drinks
-        </p>
-      </DaySection>
-      <DaySection :img="imgDance">
-        <p><strong>9:00pm til midnight</strong></p>
-        <p> 
+        </DaySection>
+        <DaySection :img="imgDance"  time="9:00 PM" time2="til midnight">
           Dance the night away
-        </p>
-      </DaySection>
+        </DaySection> 
+      </DayGroup>
     </Day>
-    <Details @gift="setRedPocket(true)" />
+    <DuoResponsive reverse>
+      <DressCode />
+      <DressCodeImage />
+    </DuoResponsive>
+    <DuoResponsive desktopTopMargin>
+      <GiftsImage />
+      <Gifts />
+    </DuoResponsive>
+    <Footer />
+    <StickyHeader href="https://forms.gle/JKuy77s5jZ1oFrT86" />
+    
   </div>
 </template>
 
 <style scoped>
- .no-scroll {
-    overflow: hidden;
-  }
+ 
 </style>

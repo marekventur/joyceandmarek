@@ -2,9 +2,6 @@
     import { defineProps } from 'vue'
 
     const props = defineProps({
-        bgColor: {
-            type: String
-        },
         headerImg: {
             type: String
         }
@@ -13,18 +10,40 @@
 </script>
 
 <template>
-    <section class="day" :style="{ backgroundColor: bgColor }">
+    <section class="day">
         <div class="inner">
-            <div class="header" v-if="headerImg !== undefined" :style="{ backgroundImage: 'url('+headerImg+')' }" />
-            <div class="spacer" v-if="headerImg === undefined" />
+            <div class="header" />
             <slot />
         </div>
     </section>
 </template>
 
 <style scoped>
-.spacer {
-    height: 8rem;
+.day {
+    margin-top: 5rem;
+}
+
+.header {
+    height: 10rem;
+    width: 100%;
+    background:url('../assets/ootd_desktop.svg') center no-repeat;
+    background-size: contain;
+    max-width: calc(100vw - 6rem);
+    margin-bottom: 10rem;
+
+    width: 100%;
+    margin: 4rem 0 10rem 0;
+}
+
+@media (max-width: 999px) {
+    .day {
+        margin-top: 0;
+    }
+    .header {
+        background-image: url('../assets/ootd_mobile.svg');
+        height: 15rem;
+        margin-bottom: 5rem;
+    }
 }
 
 .inner {
@@ -34,12 +53,7 @@
     padding-bottom: 8rem;
 }
 .header {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 12rem;
-    width: 100%;
-    margin: 4rem 0 4rem 0;
+    
 }
 
 </style>

@@ -1,0 +1,75 @@
+<script setup lang="ts">
+</script>
+
+<template>
+    <section class="gifts">
+        <div class="header" />
+        <div class="box">
+            <p>We are just so grateful that you can join us on our special day. Your company is the only gift we need.</p> 
+            <p>If you wish to give, a contribution to our honeymoon would be appreciated, send a message to one of us and we can share details.</p>
+        </div>
+        <a class="button" target="_blank" href="https://monzo.me/yanyeeli">Monzo.me link</a>
+    </section>
+</template>
+
+<style scoped>
+.gifts {
+    box-sizing: border-box;
+    max-width: 100vw;
+    width: 75rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    align-items: flex-start;
+    padding-left: 20rem;
+}
+.header {
+    height: 10rem;
+    width: 100%;
+    background:url('../assets/gift.svg') left center no-repeat;
+    background-size: contain;
+    max-width: calc(100vw - 6rem);
+    margin-bottom: 5rem;
+}
+
+.box {
+    text-align: left;
+    font-size: 1.4rem;
+    margin-bottom: 5rem;
+}
+p, h2 {
+    margin-bottom: 2rem;
+}
+
+.button {
+    font-size: 1.4rem;
+    display: block;
+    padding: 1rem 4rem;
+    border: 1px solid black;
+    text-decoration: none;
+}
+
+
+@media (max-width: 999px) {
+    .gifts {
+        align-items: flex-start;
+        padding: 5rem;
+    }
+    .header {
+        background-position: left center;
+    }
+
+    .box {
+        margin-left: 20vw;
+        width: 50vw;
+        margin-bottom: 2rem;
+    }
+
+    .button {
+        margin-left: 20vw;
+        
+    }
+}
+
+</style>
+  

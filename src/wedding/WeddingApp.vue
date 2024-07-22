@@ -1,13 +1,19 @@
 <script setup lang="ts">
   import Header from "../sections/Header.vue";
-  import Hero from "../sections/Hero.vue";
-  import Rsvp from "../sections/Rsvp.vue";
+  import Pullquote from "../sections/Pullquote.vue";
+  import DuoResponsive from "../sections/DuoResponsive.vue";
+  import Location from "../sections/Location.vue";
   import Day from "../sections/Day.vue";
-  import DayLocation from "../sections/DayLocation.vue";
+  import DayLocation from "@/sections/DayLocation.vue";
+  import DayGroup from "../sections/DayGroup.vue";
   import DaySection from "../sections/DaySection.vue";
-  import Details from "../sections/Details.vue";
-  import RedPocket from "../sections/RedPocket.vue";
-  import Countdown from "../sections/Countdown.vue";
+  import LocationSection from "@/sections/LocationSection.vue";
+  import StickyHeader from "../sections/StickyHeader.vue";
+  import Gifts from "../sections/Gifts.vue";
+  import GiftsImage from "../sections/GiftsImage.vue";
+  import Footer from "../sections/Footer.vue";
+  import DressCode from "@/sections/DressCode.vue";
+  import DressCodeImage from "@/sections/DressCodeImage.vue";
 
   import imgCake from '@/assets/cake.png'
   import imgPartyFood from '@/assets/party_food.png'
@@ -18,85 +24,57 @@
   import imgDay1 from '@/assets/day1.png'
   import imgDay2 from '@/assets/day2.png'
   import imgClissoldHouse from '@/assets/clissold_house.png'
+  
 
   import { ref } from 'vue';
 
-  const isRedPocketOpen = ref(false);
 
-  const setRedPocket = (state:boolean) => {
-    isRedPocketOpen.value = state;
-    document.body.style.overflow = state?'hidden':'auto';
-  };
+  
 </script>
 
 <template>
-  <div :class="{ 'no-scroll': isRedPocketOpen }">
-    <RedPocket :is-open="isRedPocketOpen" @close="setRedPocket(false)"/>
-    <Header>
-      <p>are delighted to invite you to their wedding celebrations on</p>
-      <p class="emphasize">6 + 7 September</p>
-      <Countdown date="2024-09-06T13:00:00"/>
-    </Header>
-    <Hero />
-    <Rsvp href="https://forms.gle/6vuXN2HctoesUpcMA"/>
-    <Day bg-color="#FFEEC4" :header-img="imgDay1">
-      <DaySection :img="imgClissoldHouse">
-        <p><strong>1:30pm</strong> - Ceremony</p>
-        <p>
-          <em>The Drawing Room</em><br>
+  <div>
+    <Header type="67" />
+    <DuoResponsive>
+      <Pullquote />
+      <Location type="clissold" color="#FFD876">
+        <LocationSection title="Ceremony<br/>Clissold House" address="Stoke Newington Church St, London N16 9HJ" link="https://maps.app.goo.gl/NXKTeuqBngMU2DX16" />
+        <LocationSection title="Dinner<br/>The Waterhouse Project" address="1 Corbridge Cres, Cambridge Heath, London E2 9DT" link="https://maps.app.goo.gl/26wLmrvgnyuAwyra7" />
+        <LocationSection title="The Duke of Richmond" address="316 Queensbridge Road, Hackney, London, E8 3NZ" link="https://maps.app.goo.gl/pqJo8ioyEe3suU9UA" />
+        
+      </Location>
+    </DuoResponsive>
+    <Day>
+      <DayGroup>
+        <DaySection :img="imgClissoldHouse" time="1:30 PM">
+          Ceremony<br />
+          The Drawing Room<br />
           Clissold House
-        </p>
-      </DaySection>
-      <DaySection :img="imgDrinks">
-        <p><strong>4:30pm</strong> - Reception</p>
-        <p>
-          <em>The Waterhouse Project</em><br>
+        </DaySection>
+        <DaySection :img="imgDrinks" time="4:30 PM">
+          Reception<br />
+          The Waterhouse Project<br />
           Bethnal Green
-        </p>
-      </DaySection>
-      <DaySection :img="imgFood">
-        <p>
-          Dine and mingle til<br/>
-          <strong>10:30pm</strong>
-        </p>
-      </DaySection>
+        </DaySection>
+        <DaySection :img="imgFood"  time="til 10:30 PM">
+          Dine and mingle
+        </DaySection>
+      </DayGroup>
     </Day>
-    <Day bg-color="#D0E6FF" :header-img="imgDay2">
-      <DayLocation line1="The Duke of Richmond" line2="Hackney" />
-      <DaySection :img="imgPub">
-        <p><strong>3:30pm</strong></p>
-        <p> 
-          Door opens<br />
-          Welcome drinks
-        </p>
-      </DaySection>
-      <DaySection :img="imgCake">
-        <p><strong>5:00pm</strong></p>
-        <p> 
-          Speeches<br />
-          Cake cutting
-        </p>
-      </DaySection>
-      <DaySection :img="imgPartyFood">
-        <p><strong>6:00pm</strong></p>
-        <p> 
-          Party food + Drinks
-        </p>
-      </DaySection>
-      <DaySection :img="imgDance">
-        <p><strong>9:00pm til midnight</strong></p>
-        <p> 
-          Dance the night away
-        </p>
-      </DaySection>
-    </Day>
-    <Details @gift="setRedPocket(true)" />
-    <Rsvp href="https://forms.gle/6vuXN2HctoesUpcMA"/>
+    <DuoResponsive reverse>
+      <DressCode />
+      <DressCodeImage />
+    </DuoResponsive>
+    <DuoResponsive desktopTopMargin>
+      <GiftsImage />
+      <Gifts />
+    </DuoResponsive>
+    <Footer />
+    <StickyHeader href="https://forms.gle/6vuXN2HctoesUpcMA" />
+    
   </div>
 </template>
 
 <style scoped>
-  .no-scroll {
-    overflow: hidden;
-  }
+ 
 </style>
