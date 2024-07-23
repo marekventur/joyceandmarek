@@ -7,6 +7,9 @@
         color: {
             type: String,
         },
+        img: {
+            type: String,
+        },
 
     });
 </script>
@@ -78,7 +81,7 @@ i {
 }
 
 .image.image--clissold {
-    background-image: url('../assets/pub_hero.jpg');
+    background-image: url('../assets/twp.webp');
 }
 
 .bg {
