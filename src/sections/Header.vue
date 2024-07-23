@@ -10,19 +10,52 @@
 
     const images = [hero1, hero2, hero3, hero4, hero5, hero6];
     const currentIndex = ref(0);
+    const transition = ref(0);
+    const isLoading = ref(true);
     const current = computed(() => images[currentIndex.value]);
-    const next = computed(() => images[(currentIndex.value + 1) % images.length]);
+    const next = computed(() => {
+        if (transition.value > 1) {
+            return current;
+        }
+        return images[(currentIndex.value + 1) % images.length];
+    });
+
+    const preloadImages = (): Promise<void> => {
+            const imagePromises = images.map(src => {
+            return new Promise<void>((resolve, reject) => {
+            const img = new Image()
+            img.onload = () => resolve()
+            img.onerror = reject
+            img.src = src
+            })
+        })
+        return Promise.all(imagePromises).then(() => {
+            isLoading.value = false;
+        })
+    }
     
     let interval: ReturnType<typeof setInterval> | null = null;
     onMounted(() => {
         interval = setInterval(() => {
-            currentIndex.value = (currentIndex.value + 1) % images.length;
-        }, 1000) 
+            if (!isLoading.value) {
+                if (transition.value === 0) {
+                    transition.value = 1;
+                } else if (transition.value === 1) {
+                    transition.value = 2;
+                    currentIndex.value = (currentIndex.value + 1) % images.length;
+                } else if (transition.value === 2) {
+                    transition.value = 0;
+                } else {
+                    
+                }
+            }
+        }, 500) 
+
+        preloadImages();
     })
     onUnmounted(() => {
         interval && clearInterval(interval)
     });
-
 
     const props = defineProps({
         type: {
@@ -35,12 +68,13 @@
 </script>
 
 <template>
-    <section class="header" :style="{'background-image': 'url('+next+')'}">
-        <div class="next"  :style="{'background-image': 'url('+current+')'}" />
+    <section class="header" >
         <div class="inner">
             <div class="signature" />
             <div class="date" :class="'date--' + type" />
         </div>
+        <div class="bg bg1" :style="{'background-image': 'url('+current+')'}" /> 
+        <div class="bg bg2" :class="{'bg2--active': (transition === 1)}" :style="{'background-image': 'url('+next+')'}" /> 
     </section>
 </template>
 
@@ -48,12 +82,28 @@
 .header {
     width: 100vw;
     height: 90vh;
-    background: url('../assets/hero1.jpg') center no-repeat;
-    background-size:cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 10rem;
+}
+
+.bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url('../assets/hero1.jpg') center no-repeat;
+    background-size:cover;
+    z-index: -1;
+}
+.bg2 {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.bg2--active {
+    opacity: 1;
 }
 
 .inner {
