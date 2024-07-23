@@ -46,12 +46,12 @@
     <Day>
       <DayGroup>
         <DaySection :img="imgClissoldHouse" time="1:30 PM">
-          Ceremony<br />
+          <em>Ceremony</em><br />
           The Drawing Room<br />
           Clissold House
         </DaySection>
         <DaySection :img="imgDrinks" time="4:30 PM">
-          Reception<br />
+          <em>Reception</em><br />
           The Waterhouse Project<br />
           Bethnal Green
         </DaySection>

@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <div class="section">
+    <div class="section day-section">
        <div class="left" :style="{ backgroundImage: 'url('+img+')' }" />
        <div class="right">
             <div class="time">{{time}}<br><i>{{time2}}</i></div>
@@ -91,3 +91,8 @@
     }
 </style>
   
+<style>
+.day-section .slot em {
+    font-weight: bold;
+}
+</style>
