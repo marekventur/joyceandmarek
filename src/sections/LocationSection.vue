@@ -14,7 +14,7 @@
 
 <template>
     <div class="box">
-        <p><em v-html="title" /></p>
+        <p class="title" v-html="title"  />
         <p><a :href="link" target="_blank">{{address}}</a></p>
     </div>
           
@@ -64,10 +64,6 @@ p {
     margin-bottom: 1rem;
 }
 
-em {
-    font-weight: bold;
-}
-
 i {
     font-style: italic;
 }
@@ -100,6 +96,19 @@ i {
     .bg {
         right: 0;
     }
+}
+</style>
+
+<style>
+.title em {
+    font-family: "mrs-eaves-roman-all-small-ca", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title strong {
+    font-weight: 800;
+    font-style: normal;
 }
 </style>
   

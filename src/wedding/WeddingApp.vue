@@ -37,9 +37,9 @@
     <DuoResponsive>
       <Pullquote />
       <Location type="clissold" color="#FFD876">
-        <LocationSection title="Ceremony<br/>Clissold House" address="Stoke Newington Church St, London N16 9HJ" link="https://maps.app.goo.gl/NXKTeuqBngMU2DX16" />
-        <LocationSection title="Dinner<br/>The Waterhouse Project" address="1 Corbridge Cres, Cambridge Heath, London E2 9DT" link="https://maps.app.goo.gl/26wLmrvgnyuAwyra7" />
-        <LocationSection title="The Duke of Richmond" address="316 Queensbridge Road, Hackney, London, E8 3NZ" link="https://maps.app.goo.gl/pqJo8ioyEe3suU9UA" />
+        <LocationSection title="<em>Ceremony</em><br/><strong>Clissold House</strong>" address="Stoke Newington Church St, London N16 9HJ" link="https://maps.app.goo.gl/NXKTeuqBngMU2DX16" />
+        <LocationSection title="<em>Reception</em><br/><strong>The Waterhouse Project</strong>" address="1 Corbridge Cres, Cambridge Heath, London E2 9DT" link="https://maps.app.goo.gl/26wLmrvgnyuAwyra7" />
+        <LocationSection title="<em>Cocktail party</em><br/><strong>The Duke of Richmond</strong>" address="316 Queensbridge Road, Hackney, London, E8 3NZ" link="https://maps.app.goo.gl/pqJo8ioyEe3suU9UA" />
         
       </Location>
     </DuoResponsive>

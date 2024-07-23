@@ -27,7 +27,7 @@
 <style scoped>
 .location {
     width: 100%;
-    height: 90vh;
+    min-height: 100vh;
     padding-top: 5rem;
     position: relative;
 }
@@ -40,12 +40,14 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-bottom: 1rem;
 }
 
 
 
 .header {
     height: 5rem;
+    flex: 0 0 auto;
     width: 100%;
     background:url('../assets/location_handwritten.svg') left center no-repeat;
     background-size: contain;
