@@ -36,4 +36,6 @@ section .inner {
 
 a, a:hover, a:active, a:visited {
   color: #000;
+
+  cursor: url('./heart_full.png') 8 8, auto;
 }
