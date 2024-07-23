@@ -59,19 +59,31 @@
 
 a {
     position: absolute;
-    right: 0;
+    right: 2rem;
     top: 0;
     text-decoration: none;
     display: block;
-    background: black;
-    color: white;
+    background: 1px solid black;
+    background: white;
+    color: black;
     font-size: 1.8rem;
     display: inline-block;
-    padding: 1rem 4rem;
+    padding: 1.5rem 4rem;
     border: 1px solid black;
     text-decoration: none;
-    top: -5rem;
-    transition: top 0.3s;
+    top: -10rem;
+    transition: top 0.3s, background-color 0.3s, color 0.3s;
+
+    font-family: "mrs-eaves-roman-all-small-ca", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+}
+
+a:hover, a:active {
+    background: black;
+    color: white;
 }
 
 .sticky-header--is-visible a {

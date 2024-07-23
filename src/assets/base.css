@@ -1,17 +1,56 @@
-@import url('./specimen_files/specimen_stylesheet.css');
+@import url("https://use.typekit.net/cqh6cke.css");
+
+
+/*Mrs Eaves OT Roman
+font-family: "mrs-eaves", serif;
+font-weight: 400;
+font-style: normal;
+
+Mrs Eaves OT Italic
+font-family: "mrs-eaves", serif;
+font-weight: 400;
+font-style: italic;
+
+Mrs Eaves OT Bold
+font-family: "mrs-eaves", serif;
+font-weight: 700;
+font-style: normal;
+
+Mrs Eaves OT Bold Italic
+font-family: "mrs-eaves", serif;
+font-weight: 700;
+font-style: italic;
+
+Mrs Eaves Roman Lining
+font-family: "mrs-eaves-roman-lining", serif;
+font-weight: 400;
+font-style: normal;
+
+Mrs Eaves Roman Small Caps
+font-family: "mrs-eaves-roman-small-caps", serif;
+font-weight: 400;
+font-style: normal;
+
+Mrs Eaves Roman All Small Caps
+font-family: "mrs-eaves-roman-all-small-ca", serif;
+font-weight: 400;
+font-style: normal;
+
+Mrs Eaves Roman All Petite Caps
+font-family: "mrs-eaves-roman-all-petite-c", serif;
+font-weight: 400;
+font-style: normal;
+
+Mrs Eaves Roman Petite Caps
+font-family: "mrs-eaves-roman-petite-caps", serif;
+font-weight: 400;
+font-style: normal;
+*/
+
 
 :root {
   --color-background: #ffffff;
   --color-text: #000000;
-}
-
-@font-face {
-  font-family: 'mrs_eaves_otroman';
-  src: url('mrs-eaves-ot-roman_31443-webfont.woff2') format('woff2'),
-       url('mrs-eaves-ot-roman_31443-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
 }
 
 html, body, div, span, applet, object, iframe,
@@ -66,7 +105,7 @@ html, body {
 body {
   color: var(--color-text);
   background: var(--color-background);
-  font-family: "mrs_eaves_otroman", "Crimson Pro", serif;
+  font-family: "mrs-eaves", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 2rem;

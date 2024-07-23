@@ -21,7 +21,7 @@
     flex-direction: column;
     padding: 5rem;
     align-items: flex-start;
-    padding-left: 20rem;
+    padding-left: 0rem;
 }
 .header {
     height: 10rem;
@@ -36,9 +36,17 @@
     text-align: left;
     font-size: 1.4rem;
     margin-bottom: 5rem;
+    max-width: 30rem;
 }
 p, h2 {
     margin-bottom: 2rem;
+}
+
+h2 {
+    font-family: "mrs-eaves-roman-small-caps", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8rem;
 }
 
 .button {
@@ -61,7 +69,7 @@ p, h2 {
 
     .box {
         margin-left: 20vw;
-        width: 50vw;
+        max-width: 50vw;
         margin-bottom: 2rem;
     }
 

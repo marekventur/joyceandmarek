@@ -32,7 +32,7 @@
 }
 
 .box {
-    width: 30rem;
+    width: 25rem;
     text-align: left;
     font-size: 1.4rem;
 }
@@ -41,7 +41,10 @@ p, h2 {
 }
 
 h2 {
-    font-weight: bold;
+    font-family: "mrs-eaves-roman-small-caps", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.8rem;
 }
 
 .palette {
