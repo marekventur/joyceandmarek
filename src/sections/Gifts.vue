@@ -53,7 +53,7 @@ h2 {
 .button {
     font-size: 1.8rem;
     display: block;
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 3rem;
     border: 1px solid black;
     text-decoration: none;
 }
