@@ -34,7 +34,8 @@
 .box {
     width: 25rem;
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
 }
 p, h2 {
     margin-bottom: 2rem;

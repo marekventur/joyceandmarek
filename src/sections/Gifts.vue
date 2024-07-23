@@ -34,7 +34,8 @@
 
 .box {
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
     margin-bottom: 5rem;
     max-width: 30rem;
 }
@@ -50,7 +51,7 @@ h2 {
 }
 
 .button {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     display: block;
     padding: 1rem 4rem;
     border: 1px solid black;

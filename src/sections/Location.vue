@@ -102,7 +102,8 @@ i {
     background: white;
     padding: 2rem;
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
     width: 50%;
     max-width: 30rem;
 }

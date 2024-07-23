@@ -35,7 +35,8 @@
         align-items: center;
         margin-bottom: 4rem;
         justify-content: space-between;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
     }
     .left {
         min-width: 10rem;
