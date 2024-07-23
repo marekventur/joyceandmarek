@@ -93,7 +93,7 @@
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
+    height: 90vh;
     background: url('../assets/hero1.jpg') center no-repeat;
     background-size:cover;
     z-index: -1;
