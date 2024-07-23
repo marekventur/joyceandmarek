@@ -1,9 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
+@import url('./specimen_files/specimen_stylesheet.css')
 
 :root {
   --color-background: #ffffff;
   --color-text: #000000;
+}
+
+@font-face {
+  font-family: 'mrs_eaves_otroman';
+  src: url('mrs-eaves-ot-roman_31443-webfont.woff2') format('woff2'),
+       url('mrs-eaves-ot-roman_31443-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 html, body, div, span, applet, object, iframe,
@@ -58,7 +66,7 @@ html, body {
 body {
   color: var(--color-text);
   background: var(--color-background);
-  font-family: "Crimson Pro", serif;
+  font-family: "mrs_eaves_otroman", "Crimson Pro", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 2rem;
