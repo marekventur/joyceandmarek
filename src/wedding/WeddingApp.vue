@@ -47,12 +47,12 @@
       <DayGroup>
         <DaySection :img="imgClissoldHouse" time="1:30 PM">
           <em>Ceremony</em><br />
-          The Drawing Room<br />
+          at The Drawing Room<br />
           Clissold House
         </DaySection>
         <DaySection :img="imgDrinks" time="4:30 PM">
           <em>Reception</em><br />
-          The Waterhouse Project<br />
+          at The Waterhouse Project<br />
           Bethnal Green
         </DaySection>
         <DaySection :img="imgFood"  time="til 10:30 PM">
@@ -74,7 +74,8 @@
           Party food + Drinks
         </DaySection>
         <DaySection :img="imgDance"  time="9:00 PM" time2="til midnight">
-          Dance the night away
+          Dine and mingle<br/>
+          through the night
         </DaySection> 
       </DayGroup>
     </Day>
