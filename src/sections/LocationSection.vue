@@ -104,6 +104,7 @@ i {
     font-family: "mrs-eaves-roman-all-small-ca", serif;
     font-weight: 400;
     font-style: normal;
+    display: block;
 }
 
 .title strong {

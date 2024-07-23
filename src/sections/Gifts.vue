@@ -58,6 +58,11 @@ h2 {
     text-decoration: none;
 }
 
+a.button:hover, a.button:active {
+    color: white;
+    background: black;
+}
+
 
 @media (max-width: 999px) {
     .gifts {

@@ -38,7 +38,7 @@
     <DuoResponsive>
       <Pullquote />
       <Location  type="pub" color="#C8E2FF">
-        <LocationSection title="The Duke of Richmond" address="316 Queensbridge Road, Hackney, London, E8 3NZ" link="https://maps.app.goo.gl/pqJo8ioyEe3suU9UA" />
+        <LocationSection title="<strong>The Duke of Richmond</strong>" address="316 Queensbridge Road, Hackney, London, E8 3NZ" link="https://maps.app.goo.gl/pqJo8ioyEe3suU9UA" />
         <div class="box"><i>
           Closest station: Dalston Junction on Overground, about 10 minutes walk.<br>
           Nearby bus: No. 236

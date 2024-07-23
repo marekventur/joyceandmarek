@@ -109,4 +109,8 @@ i {
     width: 50%;
     max-width: 30rem;
 }
+
+.box i {
+    font-style: italic;
+}
 </style>
