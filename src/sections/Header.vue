@@ -81,7 +81,7 @@
 <style scoped>
 .header {
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -93,7 +93,7 @@
     left: 0;
     right: 0;
     top: 0;
-    height: 90vh;
+    height: 80vh;
     background: url('../assets/hero1.jpg') center no-repeat;
     background-size:cover;
     z-index: -1;
