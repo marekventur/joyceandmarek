@@ -1,15 +1,42 @@
 <script setup lang="ts">
+    import hero1 from '@/assets/hero1.jpg';
+    import hero2 from '@/assets/hero2.jpg';
+    import hero3 from '@/assets/hero3.jpg';
+    import hero4 from '@/assets/hero4.jpg';
+    import hero5 from '@/assets/hero5.jpg';
+    import hero6 from '@/assets/hero6.jpg';
+
+    import { ref, computed, onMounted, onUnmounted} from 'vue';
+
+    const images = [hero1, hero2, hero3, hero4, hero5, hero6];
+    const currentIndex = ref(0);
+    const current = computed(() => images[currentIndex.value]);
+    const next = computed(() => images[(currentIndex.value + 1) % images.length]);
+    
+    let interval: ReturnType<typeof setInterval> | null = null;
+    onMounted(() => {
+        interval = setInterval(() => {
+            currentIndex.value = (currentIndex.value + 1) % images.length;
+        }, 1000) 
+    })
+    onUnmounted(() => {
+        interval && clearInterval(interval)
+    });
+
 
     const props = defineProps({
         type: {
             type: String
         }
     });
+
+    
   
 </script>
 
 <template>
-    <section class="header">
+    <section class="header" :style="{'background-image': 'url('+next+')'}">
+        <div class="next"  :style="{'background-image': 'url('+current+')'}" />
         <div class="inner">
             <div class="signature" />
             <div class="date" :class="'date--' + type" />
