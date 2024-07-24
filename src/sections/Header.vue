@@ -137,7 +137,7 @@
 @media (max-width: 999px) {
   .inner {
     flex-direction: column; 
-    height: calc(90vh - 10rem)
+    height: calc(80vh - 10rem)
   }
 
   .signature {
