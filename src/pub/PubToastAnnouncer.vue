@@ -7,7 +7,7 @@ import { useConfetti } from './confetti';
 
 const toast = ref();
 
-if (window.location.href.includes('leaderboard')) {
+if (window.location.hash.includes('leaderboard')) {
   const addConfetti = useConfetti();
   sub('toast', (message: any) => {
     addConfetti({

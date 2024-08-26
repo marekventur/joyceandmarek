@@ -52,7 +52,7 @@ const team = computed(() => {
     </div>
     <div class="points">
       You have collected <em>{{ player.points ?? 0 }} points</em> this evening!<br />
-      <a class="leaderboard" href="./leaderboard.html" target="_blank">Check the leaderboard</a>
+      <a class="leaderboard" href="/pub/index.html#leaderboard" target="_blank">Check the leaderboard</a>
     </div>
   </section>
 </template>

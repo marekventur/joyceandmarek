@@ -17,7 +17,7 @@ export function displayTime(time: number) {
 
 export function usePlayerId() {
   const hash = window.location.hash;
-  if (!hash || hash.length < 2) {
+  if (!hash || hash.length < 2 || hash === '#leaderboard') {
     return null;
   } else {
     return hash.slice(1);
