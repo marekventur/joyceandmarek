@@ -20,7 +20,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, './index.html'),
-        altenkirchen: resolve(__dirname, './altenkirchen/index.html'),
+        pub: resolve(__dirname, './pub/index.html'),
         wedding: resolve(__dirname, './wedding/index.html'),
       },
     },
