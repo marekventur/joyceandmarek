@@ -8,11 +8,11 @@ import PubQuizRound from './PubQuizRound.vue';
 const schedule = useSchedule();
 const time = useTime();
 const currentRound = computed(() => {
-  return schedule.value.find((round) => round.start <= time.value && round.end >= time.value);
+  return schedule.value.find((round: any) => round.start <= time.value && round.end >= time.value);
 });
 
 const previousRounds = computed(() => {
-  return schedule.value.filter((round) => round.end < time.value);
+  return schedule.value.filter((round: any) => round.end < time.value);
 });
 
 </script>

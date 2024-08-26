@@ -14,7 +14,7 @@ const current = props.current;
 const playerId = usePlayerId();
 const correct = ref(-1);
 
-const question = ref([]);
+const question = ref<any>({});
 const dataRef = dbref(db, 'questions/' + id);
 onMounted(() => {
   onValue(dataRef, t => {

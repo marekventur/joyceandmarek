@@ -9,7 +9,7 @@ const toast = ref();
 
 if (window.location.href.includes('leaderboard')) {
   const addConfetti = useConfetti();
-  sub('toast', (message) => {
+  sub('toast', (message: any) => {
     addConfetti({
       emojis: ['🥂', '🍺', '🍹', '🍸'],
       confettiNumber: 10,

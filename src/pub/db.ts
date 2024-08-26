@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { ref, onMounted, onUnmounted } from 'vue';
-import { getDatabase, ref as dbref, off, onValue, get, set, push } from "firebase/database";
+import { ref, onMounted, onUnmounted, type Ref } from 'vue';
+import { getDatabase, ref as dbref, off, onValue, get, set, push, DataSnapshot } from "firebase/database";
 import { usePlayerId } from "./utils";
 
 const firebaseConfig = {
@@ -10,9 +10,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const time = ref(null);
+const time = ref(-1);
 export function useTime() {
-  if (!time.value) {
+  if (time.value === -1) {
     const dataRef = dbref(db, 'process/time');
     onMounted(() => {
       onValue(dataRef, t => time.value = t.val());
@@ -22,28 +22,50 @@ export function useTime() {
   return time;
 }
 
-const players = ref(null);
-export function usePlayers() {
+interface Player {
+  name: string;
+  key: string,
+  points: number,
+  clicks: number,
+  correct_answers: number,
+}
+
+const players = ref<Array<Player>|null>(null);
+export function usePlayers(): Ref<Array<Player>> {
   if (!players.value) {
     const dataRef = dbref(db, 'players');
     onMounted(() => {
-      onValue(dataRef, t => players.value = t.val());
+      onValue(dataRef, t => players.value = Object.entries(t.val()).map(([key, p]: [string, any]) => ({
+        ...p as object, 
+        name: (p.name || '') as string,
+        key: key,
+        points: (p.points || 0) as number,
+        clicks: (p.clicks || 0) as number,
+        correct_answers: (p.correct_answers || 0) as number,
+      })));
     });
     onUnmounted(() => off(dataRef));
   }
-  return players;
+  console.log(players.value);
+  return players as Ref<Array<Player>>;
 }
 
-const schedule = ref<any>(null);
-export function useSchedule() {
+interface Round {
+  end: number;
+  name: string;
+  start: number;
+}
+
+const schedule = ref<Array<Round>|null>(null);
+export function useSchedule(): Ref<Array<Round>> {
   if (!schedule.value) {
     const dataRef = dbref(db, 'schedule');
     onMounted(() => {
-      onValue(dataRef, t => schedule.value = Object.values(t.val()).sort((a, b) => a.start - b.start));
+      onValue(dataRef, (t: DataSnapshot) => schedule.value = (Object.values(t.val()) as Array<Round>).sort((a, b) => a.start - b.start));
     });
     onUnmounted(() => off(dataRef));
   }
-  return schedule;
+  return schedule as Ref<Array<Round>>;
 }
 
 const player = ref<any>(null);
@@ -71,7 +93,7 @@ export function usePlayer() {
   return player;
 }
 
-export function pub(topic, message) {
+export function pub(topic: string, message: object) {
   const topicRef = dbref(db, `pubsub/${topic}`);
   push(topicRef, {
     ...message,
@@ -79,14 +101,14 @@ export function pub(topic, message) {
   });
 };
 
-export function sub(topic, callback) {
+export function sub(topic: string, callback: (item: object) => void) {
   const topicRef = dbref(db, `pubsub/${topic}`);
   onMounted(async () => {
     onValue(topicRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         Object.values(data).forEach(item => {
-          callback(item);
+          callback(item as object);
         });
       }
     });
