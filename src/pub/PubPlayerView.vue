@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PubPlayerInfo from "./PubPlayerInfo.vue";
 import PubClickGame from "./PubClickGame.vue";
+import PubQuiz from "./PubQuiz.vue";
 
 import { useTime, usePlayer } from "./db";
 import { displayTime, usePlayerId } from "./utils";
@@ -14,6 +15,7 @@ const player = usePlayer();
   <section class="player-view">
     <PubPlayerInfo />
     <PubClickGame v-if="player.name" />
+    <PubQuiz v-if="player.name" />
   </section>
 </template>
 
@@ -23,6 +25,6 @@ const player = usePlayer();
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  width: 100%;
+  width: 100vw;
 }
 </style>

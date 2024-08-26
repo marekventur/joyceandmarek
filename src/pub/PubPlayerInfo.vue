@@ -4,7 +4,7 @@ import { usePlayer, useTime, db } from "./db";
 import { runTransaction, ref as dbref } from "firebase/database";
 
 const player = usePlayer();
-const changeName = ref(player.value?.name?.length);
+const changeNameManual = ref(false);
 const name = ref(player.value?.name);
 const saveName = async () => {
   if (name.value && name.value.length >= 3) {
@@ -12,18 +12,24 @@ const saveName = async () => {
 
     await runTransaction(dataRef, (current) => {
       if (current === null) {
-        return { name: name.value };
+        player.value = { name: name.value };
       } else {
-        return { ...current, name: name.value };
+        player.value = { ...current, name: name.value };
       }
+      return player.value;
     });
-    changeName.value = false;
+    changeNameManual.value = false;
+    window.location.reload();
   }
 }
 const startChangeName = () => {
-  changeName.value = true;
+  changeNameManual.value = true;
   name.value = player.value?.name;
 }
+
+const changeName = computed(() => {
+  return changeNameManual.value || !player.value?.name || player.value?.name.length < 3;
+});
 
 const team = computed(() => {
   return player.value?.key?.startsWith('b') ? 'Bride' : 'Groom';

@@ -3,9 +3,12 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import PubHeader from './PubHeader.vue';
 import PubLeaderboard from './PubLeaderboard.vue';
 import PubPlayerView from './PubPlayerView.vue';
+import PubToastAnnouncer from './PubToastAnnouncer.vue';
 import { usePlayerId } from './utils';
 
+
 const playerId = usePlayerId();
+
 
 
 </script>
@@ -15,7 +18,7 @@ const playerId = usePlayerId();
     <PubHeader />
     <PubPlayerView v-if="playerId" />
     <PubLeaderboard />
-
+    <PubToastAnnouncer />
   </div>
 </template>
 

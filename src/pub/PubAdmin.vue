@@ -11,7 +11,7 @@ const onChange = (value: number) => {
 </script>
 
 <template>
-  <section class="admin">
+  <section class="admin" v-if="false">
     <button v-on:click="onChange(10)">+</button>
     <button v-on:click="onChange(-10)">-</button>
   </section>

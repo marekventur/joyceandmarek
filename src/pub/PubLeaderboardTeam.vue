@@ -10,11 +10,11 @@ const team = props.team;
 const allPlayers = usePlayers();
 
 const players = computed(() => {
-  return Object.entries(allPlayers.value)
+  return allPlayers.value ? Object.entries(allPlayers.value)
     .filter(([id, _]) => id.startsWith(team))
     .map(([id, player]) => ({ id, ...player }))
     .sort((a, b) => b.points - a.points)
-    .map((player, index) => ({ ...player, rank: index + 1 }));
+    .map((player, index) => ({ ...player, rank: index + 1 })) : [];
 });
 
 const name = team === 'b' ? 'Team Bride' : 'Team Groom';
