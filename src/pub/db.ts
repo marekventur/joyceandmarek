@@ -15,7 +15,7 @@ export function useTime() {
   if (time.value === -1) {
     const dataRef = dbref(db, 'process/time');
     onMounted(() => {
-      onValue(dataRef, t => time.value = t.val());
+      onValue(dataRef, t => time.value = t.val() - 400);
     });
     onUnmounted(() => off(dataRef));
   }
@@ -54,6 +54,8 @@ interface Round {
   end: number;
   name: string;
   start: number;
+  click_points: number;
+  quiz_points: number;
 }
 
 const schedule = ref<Array<Round>|null>(null);

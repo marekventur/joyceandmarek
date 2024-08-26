@@ -19,9 +19,9 @@ const previousRounds = computed(() => {
 
 <template>
   <section class="player-quiz">
-    <h1>Current quiz round</h1>
+    <h1 v-if="currentRound">Current quiz round</h1>
     <PubQuizRound v-if="currentRound" :schedule="currentRound" :current="true" />
-    <h1>Did you get the answer right?</h1>
+    <h1>Did you get everything right?</h1>
     <PubQuizRound v-bind:key="round.start" v-for="round in previousRounds" :schedule="round" :current="false" />
   </section>
 </template>

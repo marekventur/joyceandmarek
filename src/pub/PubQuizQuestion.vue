@@ -29,7 +29,7 @@ onUnmounted(() => off(dataRef));
 const selected = ref(-1);
 const selectedRef = dbref(db, 'players/' + playerId + '/answers/' + id);
 onMounted(() => {
-  onValue(selectedRef, t => selected.value = t.val());
+  onValue(selectedRef, t => selected.value = t.val() ?? -1);
 });
 onUnmounted(() => off(selectedRef));
 
@@ -39,19 +39,27 @@ const selectAnswer = (index: number) => {
   }
 }
 
+const prefix = computed(() => {
+  if (current || selected.value === -1) {
+    return '' + selected.value;
+  } else {
+    return correct.value === selected.value ? '✅ ' : '❌ ';
+  }
+})
+
 
 </script>
 
 <template>
   <section class="quiz-question"
-    :class="{ 'quiz-question--correct': !current && correct === selected, 'quiz-question--incorrect': !current && correct !== selected }"
+    :class="{ 'quiz-question--correct': !current && correct === selected, 'quiz-question--incorrect': !current && correct !== selected && selected > -1 }"
     v-if="question">
-    <h1>{{ question.question }}</h1>
+    <h1>{{ prefix + question.question }}</h1>
     <div class="answers">
       <button class="answer" :disabled="!current"
         :class="{ 'answer--clickable': current, 'answer--selected': index === selected, 'answer--correct': index === correct, 'answer--incorrect': (index !== correct && !current) }"
         :key="index" v-for="(answer, index) in question.answers" @click="selectAnswer(index)">
-        {{ index + ' ' + answer }}
+        {{ answer }}
       </button>
     </div>
 
@@ -60,8 +68,8 @@ const selectAnswer = (index: number) => {
 
 <style scoped>
 .quiz-question {
-  padding: 1rem;
   width: 100%;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
@@ -76,15 +84,19 @@ const selectAnswer = (index: number) => {
 }
 
 .answers {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .answer {
+  flex: 1;
+  min-width: 40%;
   border: 1px solid black;
   background: #f0f0f0;
-  padding: 1rem;
-  margin: 0.5rem;
+  padding: calc(1rem);
 }
 
 .answer--clickable {
@@ -95,6 +107,7 @@ const selectAnswer = (index: number) => {
 .answer--selected {
   background: #70f0f0;
   border-width: 2px;
+  padding: calc(1rem);
   font-weight: bold;
 }
 

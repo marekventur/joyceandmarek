@@ -40,7 +40,7 @@ const team = computed(() => {
 <template>
   <section class="player-info">
     <div class="welcome-name" v-if="!changeName">
-      <h1>Welcome {{ player.name }}!</h1>
+      <h1>Hey there, {{ player.name }}!</h1>
       <button @click="startChangeName">Change Name</button>
     </div>
     <div class="change-name" v-if="changeName">
@@ -52,7 +52,7 @@ const team = computed(() => {
     </div>
     <div class="points">
       You have collected <em>{{ player.points ?? 0 }} points</em> this evening!<br />
-      <a href="./leaderboard.html" target="_blank">Check the leaderboard</a>
+      <a class="leaderboard" href="./leaderboard.html" target="_blank">Check the leaderboard</a>
     </div>
   </section>
 </template>
@@ -66,6 +66,11 @@ const team = computed(() => {
   flex-direction: column;
   align-items: center;
   ;
+}
+
+.leaderboard {
+  display: block;
+  margin-top: 1rem;
 }
 
 .change-name,
