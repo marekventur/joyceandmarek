@@ -41,7 +41,7 @@ const selectAnswer = (index: number) => {
 
 const prefix = computed(() => {
   if (current || selected.value === -1) {
-    return '' + selected.value;
+    return '';
   } else {
     return correct.value === selected.value ? '✅ ' : '❌ ';
   }
