@@ -88,7 +88,7 @@ export function usePlayer() {
           name: ''
         });
       }
-      onValue(dataRef, t => player.value = {...t.val(), key: playerId});
+      onValue(dataRef, t => player.value = {...t.val(), key: playerId, points: ((t.val().click_points || 0) + (t.val().quiz_points || 0)) as number});
     });
     onUnmounted(() => off(dataRef));
   }

@@ -14,8 +14,9 @@ const saveName = async () => {
       if (current === null) {
         player.value = { name: name.value };
       } else {
-        player.value = { ...current, name: name.value };
+        player.value = { ...current, name: name.value, };
       }
+      console.log(player.value);
       return player.value;
     });
     changeNameManual.value = false;
