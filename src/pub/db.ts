@@ -15,7 +15,7 @@ export function useTime() {
   if (time.value === -1) {
     const dataRef = dbref(db, 'process/time');
     onMounted(() => {
-      onValue(dataRef, t => time.value = t.val() - 400);
+      onValue(dataRef, t => time.value = t.val());
     });
     onUnmounted(() => off(dataRef));
   }
