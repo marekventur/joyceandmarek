@@ -36,14 +36,16 @@ const countdown = computed(() => {
     <div class="disabled" v-if="countdown > 0">Time until you can toast again: {{ countdown }} minutes</div>
     <div class="counter" v-if="player.clicks > 0">You have toasted {{ player.clicks }} times this evening for a total of
       {{ player.click_points }} points</div>
-    <button @click="toast" v-bind:disabled="countdown > 0">🥂</button>
+    <button @click="toast" v-bind:disabled="countdown > 0"><span v-if="!countdown">➡️ </span>🥂<span v-if="!countdown">
+        ⬅️</span></button>
     <div class="explanation">Raise a glass, earn some class! (+{{ pointsIncrement }} point)</div>
   </section>
 </template>
 
 <style scoped>
 .player-click {
-  border: 1px solid black;
+  border: 1px solid var(--pub-border);
+  background: var(--pub-card-background);
   margin: 1rem;
   padding: 1rem;
   margin-top: 1rem;
@@ -62,7 +64,7 @@ button {
   font-size: 8rem;
   height: 10rem;
   margin-top: 1rem;
-  border: none;
+  border: transparent;
   background: transparent;
 }
 

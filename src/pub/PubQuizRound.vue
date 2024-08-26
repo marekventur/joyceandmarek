@@ -44,7 +44,8 @@ const submit = () => {
 
 <style scoped>
 .quiz-round {
-  border: 1px solid black;
+  border: 1px solid var(--pub-border);
+  background: var(--pub-card-background);
   padding: 1rem;
   width: 100%;
   margin-bottom: 1rem;

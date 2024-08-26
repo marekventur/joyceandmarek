@@ -14,7 +14,7 @@ const playerId = usePlayerId();
 </script>
 
 <template>
-  <div>
+  <div class="main">
     <PubHeader />
     <PubPlayerView v-if="playerId" />
     <PubLeaderboard />
@@ -22,4 +22,9 @@ const playerId = usePlayerId();
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main {
+  background: #bd83ff;
+  height: 100vh;
+}
+</style>

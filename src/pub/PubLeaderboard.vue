@@ -35,14 +35,19 @@ const lastRound = computed(() => {
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 999px) {
+  .boards {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .boards>* {
   flex: 1;
-}
-
-.boards>*:first-child {
-  margin-right: 1rem;
 }
 
 .last-round {

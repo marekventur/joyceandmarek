@@ -39,7 +39,7 @@ export function usePlayers(): Ref<Array<Player>> {
         ...p as object, 
         name: (p.name || '') as string,
         key: key,
-        points: (p.points || 0) as number,
+        points: ((p.click_points || 0) + (p.quiz_points || 0)) as number,
         clicks: (p.clicks || 0) as number,
         correct_answers: (p.correct_answers || 0) as number,
       })));

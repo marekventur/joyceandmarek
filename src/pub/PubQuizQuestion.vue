@@ -72,6 +72,7 @@ const prefix = computed(() => {
   margin-top: 2rem;
   margin-bottom: 1rem;
   display: flex;
+  text-align: center;
   flex-direction: column;
 }
 

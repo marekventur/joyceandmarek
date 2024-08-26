@@ -59,7 +59,8 @@ const team = computed(() => {
 
 <style scoped>
 .player-info {
-  border: 1px solid black;
+  border: 1px solid var(--pub-border);
+  background: var(--pub-card-background);
   padding: 1rem;
   margin-top: 1rem;
   display: flex;
