@@ -69,11 +69,11 @@ const prefix = computed(() => {
 <style scoped>
 .quiz-question {
   width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   display: flex;
   text-align: center;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .quiz-question--incorrect {
@@ -90,6 +90,7 @@ const prefix = computed(() => {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
+  width: 100%;
 }
 
 .answer {

@@ -25,6 +25,6 @@ const playerId = usePlayerId();
 <style scoped>
 .main {
   background: #bd83ff;
-  height: 100vh;
+  min-height: 100vh;
 }
 </style>

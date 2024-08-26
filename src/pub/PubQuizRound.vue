@@ -46,21 +46,27 @@ const submit = () => {
 .quiz-round {
   border: 1px solid var(--pub-border);
   background: var(--pub-card-background);
-  padding: 1rem;
   width: 100%;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 h1 {
+  padding: 1rem;
   font-weight: bold;
   display: block;
   padding-bottom: 0.5rem;
 
 }
 
+h2 {
+  padding: 0 1rem;
+}
+
 .rules {
+  padding: 1rem;
   font-style: italic;
   padding-top: 1rem;
 }
@@ -70,6 +76,7 @@ h1 {
   flex-direction: column;
   align-content: center;
   text-align: center;
+  padding: 0 1rem;
   padding-top: 2rem;
 }
 

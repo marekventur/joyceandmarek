@@ -19,13 +19,18 @@ const players = computed(() => {
     .filter((e) => e.key.startsWith(team)) : [];
 });
 
+const total = computed(() => players.value.reduce((acc, player) => acc + player.points, 0));
+
 const name = team === 'b' ? 'Team Bride' : 'Team Groom';
 
 </script>
 
 <template>
   <div class="team">
-    <h1>{{ name }}</h1>
+    <div class="header">
+      <h1>{{ name }}</h1>
+      <div class="total">{{ total }} points</div>
+    </div>
     <table>
       <tr v-for="player in players" :key="player.key">
         <td class="c-rank">#{{ player.rank }}</td>
@@ -48,10 +53,20 @@ const name = team === 'b' ? 'Team Bride' : 'Team Groom';
 
 }
 
-h1 {
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 3rem;
+  padding-right: 1rem;
+  align-content: baseline;
   font-size: 2.5rem;
-  font-weight: bold;
+}
+
+h1,
+.total {
   padding: 1rem;
+  font-weight: bold;
 }
 
 table {
