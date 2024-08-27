@@ -308,7 +308,7 @@
             "Crabstick",
             "This is a trick question, she likes all of them"
          ],
-         "correct":3
+         "correct":2
       },
       "q10_3":{
          "question":"How many noodles can a person eat per day (according to Joyce)?",
@@ -462,8 +462,8 @@
          "end":420,
          "quiz_points":150,
          "click_points":30,
-         "name":"Linguistic Leaps: Love in Many Languages",
-         "text":"9-10 PM: Sprechen Sie Love?",
+         "name":"Linguistic Leaps: A pub full of languages",
+         "text":"9-10 PM: You might have to find some help for this one!",
          "questions":[
             "q09_1",
             "q09_2",
@@ -491,7 +491,7 @@
       }
    ],
    "process":{
-      "last_tick":84,
+      "hour_start":14,
       "time":85
    }
 }
