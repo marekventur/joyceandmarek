@@ -16,7 +16,6 @@ const saveName = async () => {
       } else {
         player.value = { ...current, name: name.value, };
       }
-      console.log(player.value);
       return player.value;
     });
     changeNameManual.value = false;

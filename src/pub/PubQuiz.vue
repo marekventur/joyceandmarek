@@ -13,7 +13,7 @@ const currentRound = computed(() => {
     if (round.end > time.value) {
       return round;
     } else {
-      window.location.reload();
+      //window.location.reload();
     }
   }
   return null;
