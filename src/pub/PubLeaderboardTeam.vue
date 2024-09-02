@@ -29,14 +29,14 @@ const name = team === 'b' ? 'Team Bride' : 'Team Groom';
   <div class="team">
     <div class="header">
       <h1>{{ name }}</h1>
-      <div class="total">{{ total }} points</div>
+      <h2 class="total">{{ total }} points</h2>
     </div>
     <table>
       <tr v-for="player in players" :key="player.key">
         <td class="c-rank">#{{ player.rank }}</td>
         <td class="c-player">{{ player.name }}</td>
         <td class="c-annotation">{{ player.annotation }}</td>
-        <td class="c-score">{{ player.points }} Points</td>
+        <td class="c-score">{{ player.points }}</td>
       </tr>
     </table>
   </div>
@@ -60,13 +60,13 @@ const name = team === 'b' ? 'Team Bride' : 'Team Groom';
   line-height: 3rem;
   padding-right: 1rem;
   align-content: baseline;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h1,
-.total {
+h2.total {
   padding: 1rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 table {
@@ -78,6 +78,7 @@ td {
   vertical-align: center;
   padding: 0.5rem;
   line-height: 3rem;
+  font-size: 2.5rem;
 }
 
 tr:nth-child(odd) {
@@ -85,21 +86,23 @@ tr:nth-child(odd) {
 }
 
 .c-rank {
-  width: 6rem;
+  margin-right: 1rem;
   padding-left: 1rem;
+  width: 1rem;
 
 }
 
 .c-annotation {
-  width: 10rem;
+  width: 14rem;
   text-align: right;
   padding-right: 1rem;
+  font-size: 2.5rem;
 }
 
 .c-score {
   width: 10rem;
   text-align: right;
-  font-weight: bold;
+  font-weight: 600;
   padding-right: 1rem;
 }
 </style>

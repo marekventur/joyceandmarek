@@ -9,7 +9,7 @@ const time = useTime();
 
 <template>
   <section class="header">
-    <div class="title">Something Borrowed, Something Knew: Nuptial Pursuit</div>
+    <h1 class="title">Something Borrowed, Something Knew: Nuptial Pursuit</h1>
     <PubAdmin />
   </section>
   <section class="spacer" />
@@ -31,7 +31,7 @@ const time = useTime();
 }
 
 .title {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .spacer {

@@ -96,6 +96,6 @@ const team = computed(() => {
 }
 
 em {
-  font-weight: bold;
+  font-weight: 600;
 }
 </style>

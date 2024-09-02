@@ -55,7 +55,7 @@ const submit = () => {
 
 h1 {
   padding: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   display: block;
   padding-bottom: 0.5rem;
 
@@ -81,7 +81,7 @@ h2 {
 }
 
 .submit {
-  font-weight: bold;
+  font-weight: 600;
   background: #e6c2ff;
   padding: 1rem;
 }

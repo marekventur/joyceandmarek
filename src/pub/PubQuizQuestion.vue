@@ -110,7 +110,7 @@ const prefix = computed(() => {
   background: #70f0f0;
   border-width: 2px;
   padding: calc(1rem);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .answer--correct {
