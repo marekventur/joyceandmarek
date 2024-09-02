@@ -54,7 +54,7 @@ const prefix = computed(() => {
   <section class="quiz-question"
     :class="{ 'quiz-question--correct': !current && correct === selected, 'quiz-question--incorrect': !current && correct !== selected && selected > -1 }"
     v-if="question">
-    <h1>{{ prefix + question.question }}</h1>
+    <p class="text">{{ prefix + question.question }}</p>
     <div class="answers">
       <button class="answer" :disabled="!current"
         :class="{ 'answer--clickable': current, 'answer--selected': index === selected, 'answer--correct': index === correct, 'answer--incorrect': (index !== correct && !current) }"
@@ -74,6 +74,10 @@ const prefix = computed(() => {
   text-align: center;
   flex-direction: column;
   padding: 1rem;
+}
+
+.text {
+  font-weight: 600;
 }
 
 .quiz-question--incorrect {

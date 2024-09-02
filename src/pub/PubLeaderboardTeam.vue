@@ -65,7 +65,9 @@ const name = team === 'b' ? 'Team Bride' : 'Team Groom';
 
 h1,
 h2.total {
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
   font-weight: 600;
 }
 
