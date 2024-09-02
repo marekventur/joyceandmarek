@@ -9,7 +9,7 @@ const time = useTime();
 
 <template>
   <section class="header">
-    <div class="title">Something Borrowed, Something Knew: Nuptual Pursuit</div>
+    <div class="title">Something Borrowed, Something Knew: Nuptial Pursuit</div>
     <PubAdmin />
   </section>
   <section class="spacer" />
