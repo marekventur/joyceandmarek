@@ -10,6 +10,27 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
+const handleVisibilityChange = () => {
+  if (!document.hidden) {
+    // App has become visible
+    const connectedRef = dbref(db, '.info/connected');
+    onValue(connectedRef, (snap) => {
+      if (snap.val() === false) {
+        // Connection to Firebase is lost, reload the page
+        window.location.reload();
+      }
+    });
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('visibilitychange', handleVisibilityChange);
+});
+
 const time = ref(-1);
 export function useTime() {
   if (time.value === -1) {
