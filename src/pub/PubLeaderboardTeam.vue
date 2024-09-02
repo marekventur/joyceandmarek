@@ -16,7 +16,7 @@ const players = computed(() => {
       ...player, rank: index + 1, annotation: [
         (player.clicks ? (player.clicks + ' 🥂 ') : null), (player.correct_answers ? (player.correct_answers + ' ✅') : null)].filter(a => a).join(' + ')
     }))
-    .filter((e) => e.key.startsWith(team)) : [];
+    .filter((e) => e.key.startsWith(team) && e.points) : [];
 });
 
 const total = computed(() => players.value.reduce((acc, player) => acc + player.points, 0));

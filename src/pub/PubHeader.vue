@@ -9,9 +9,8 @@ const time = useTime();
 
 <template>
   <section class="header">
-    <div class="title">Till Quiz Do Us Part: Team Bride vs. Team Groom</div>
+    <div class="title">Something Borrowed, Something Knew: Nuptual Pursuit</div>
     <PubAdmin />
-    <div class="clock">{{ displayTime(time) }}</div>
   </section>
   <section class="spacer" />
 </template>
