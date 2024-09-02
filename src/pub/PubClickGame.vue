@@ -20,7 +20,7 @@ const toast = () => {
   runTransaction(dbref(db, 'players/' + player.value?.key), (current) => {
     return { ...current, click_points: (current.click_points ?? 0) + pointsIncrement.value, clicks: (current.clicks ?? 0) + 1, last_click: time.value };
   });
-  pub('toast', { name: player.value?.name, team: player.value?.key[0] });
+  pub('toast', { name: player.value?.name, team: player.value?.key[0], points: pointsIncrement.value });
 }
 
 const countdown = computed(() => {

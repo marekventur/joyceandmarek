@@ -20,13 +20,14 @@ if (window.location.hash.includes('leaderboard')) {
       toast.value = null;
     }, 30000);
   });
+  navigator.wakeLock.request('screen');
 }
 </script>
 
 <template>
   <section class="toast-announcer" v-if="toast">
-    <h1>{{ toast.name }} sends a toast to everyone!</h1>
-    <h2>+1 Point for Team {{ toast.team === 'g' ? 'Groom' : 'Bride' }}</h2>
+    <h1>{{ toast.name }} sends a toast!</h1>
+    <h2>+{{ toast.points }} Point for Team {{ toast.team === 'g' ? 'Groom' : 'Bride' }}</h2>
   </section>
 </template>
 
