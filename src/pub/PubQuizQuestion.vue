@@ -57,9 +57,10 @@ const prefix = computed(() => {
     <p class="text">{{ prefix + question.question }}</p>
     <div class="answers">
       <button class="answer" :disabled="!current"
-        :class="{ 'answer--clickable': current, 'answer--selected': index === selected, 'answer--correct': index === correct, 'answer--incorrect': (index !== correct && !current) }"
-        :key="index" v-for="(answer, index) in question.answers" @click="selectAnswer(index)">
-        {{ answer }}
+        :class="{ 'answer--img': answer.startsWith('http'), 'answer--clickable': current, 'answer--selected': index === selected, 'answer--correct': index === correct, 'answer--incorrect': (index !== correct && !current) }"
+        :style="{ backgroundImage: answer.startsWith('http') ? 'url(' + answer + ')' : '' }" :key="index"
+        v-for="(answer, index) in question.answers" @click="selectAnswer(index)">
+        {{ answer.startsWith('http') ? '' : answer }}
       </button>
     </div>
 
@@ -105,27 +106,34 @@ const prefix = computed(() => {
   padding: calc(1rem);
 }
 
+.answer.answer--img {
+  background-size: contain;
+  background-position: center;
+  min-height: 20rem;
+  background-repeat: no-repeat;
+}
+
 .answer--clickable {
   cursor: pointer;
-  background: #ffffff;
+  background-color: #ffffff;
 }
 
 .answer--selected {
-  background: #70f0f0;
+  background-color: #70f0f0;
   border-width: 2px;
   padding: calc(1rem);
   font-weight: 600;
 }
 
 .answer--correct {
-  background: #d0ffd3;
+  background-color: #d0ffd3;
 }
 
 .answer--correct.answer--selected {
-  background: #70f079;
+  background-color: #70f079;
 }
 
 .answer--incorrect.answer--selected {
-  background: #fcd3d3;
+  background-color: #fcd3d3;
 }
 </style>

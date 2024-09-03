@@ -25,8 +25,8 @@ const submit = () => {
 <template>
   <section class="quiz-round">
     <h1>{{ schedule.name }}</h1>
-    <p>{{ schedule.text }} <span v-if="!current"> - <strong>{{ schedule.quiz_points }} points</strong> per correct
-        answer</span></p>
+    <p>{{ schedule.text }} </p>
+    <p v-if="!current"><strong>{{ schedule.quiz_points }} points</strong> per correct answer</p>
     <p v-if="current" class="rules">Select your best guess for each question. You can change your guess until the end of
       the hour. Each correct guess scores <strong>{{ schedule.quiz_points }} points</strong> this round.
     </p>

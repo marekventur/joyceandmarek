@@ -37,6 +37,7 @@ const lastRound = computed(() => {
   padding: 1rem;
   gap: 1rem;
   align-items: flex-start;
+  margin-top: 1rem;
 }
 
 @media (max-width: 999px) {

@@ -10,7 +10,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const handleVisibilityChange = () => {
+document.addEventListener('visibilitychange', () => {
   if (!document.hidden) {
     // App has become visible
     const connectedRef = dbref(db, '.info/connected');
@@ -21,14 +21,6 @@ const handleVisibilityChange = () => {
       }
     });
   }
-};
-
-onMounted(() => {
-  document.addEventListener('visibilitychange', handleVisibilityChange);
-});
-
-onUnmounted(() => {
-  document.removeEventListener('visibilitychange', handleVisibilityChange);
 });
 
 const time = ref(-1);

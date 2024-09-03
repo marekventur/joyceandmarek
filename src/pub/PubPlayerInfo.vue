@@ -40,12 +40,13 @@ const team = computed(() => {
 <template>
   <section class="player-info">
     <div class="welcome-name" v-if="!changeName">
-      <h1>Hey there, {{ player.name }}!</h1>
+      <p>Hey there, {{ player.name }}!</p>
       <button @click="startChangeName">Change Name</button>
     </div>
     <div class="change-name" v-if="changeName">
-      Your name: <input type="text" v-model="name" />
-      <button @click="saveName" :disabled="!name || name.length < 3">Save</button>
+      Your name:
+      <div class="name-input"><input type="text" v-model="name" /> <button @click="saveName"
+          :disabled="!name || name.length < 3">Save</button></div>
     </div>
     <div class="team">
       You are in <em>Team {{ team }}</em>, answer questions to boost the team's combined points!
@@ -74,19 +75,47 @@ const team = computed(() => {
   margin-top: 1rem;
 }
 
-.change-name,
+.change-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .welcome-name {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: center;
   width: 100%;
   align-items: first baseline;
+  flex-wrap: wrap;
 }
 
 .change-name button,
 .change-name input,
 .welcome-name button {
   margin-left: 1rem;
+  margin-top: 1rem;
+  height: 3rem;
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 0 1rem;
+  background: white;
+}
+
+.welcome-name button {
+  border: none;
+  padding: 0;
+  font-size: 1.5rem;
+  text-decoration: underline;
 }
 
 .points,
