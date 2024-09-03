@@ -59,7 +59,6 @@ export function usePlayers(): Ref<Array<Player>> {
     });
     onUnmounted(() => off(dataRef));
   }
-  console.log(players.value);
   return players as Ref<Array<Player>>;
 }
 
