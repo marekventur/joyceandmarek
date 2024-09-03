@@ -21,7 +21,7 @@ const players = computed(() => {
 
 const total = computed(() => players.value.reduce((acc, player) => acc + player.points, 0));
 
-const name = team === 'b' ? 'Team Bride' : 'Team Groom';
+const name = team === 'b' ? 'Team 👰‍♀️ Bride' : 'Team 🤵 Groom';
 
 </script>
 

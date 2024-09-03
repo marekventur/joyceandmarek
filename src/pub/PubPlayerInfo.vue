@@ -32,7 +32,7 @@ const changeName = computed(() => {
 });
 
 const team = computed(() => {
-  return player.value?.key?.startsWith('b') ? 'Bride' : 'Groom';
+  return player.value?.key?.startsWith('b') ? '👰‍♀️ Bride' : '🤵 Groom';
 });
 
 </script>
